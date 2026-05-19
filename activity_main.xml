@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- LEFT TOOL PANEL -->
+
+    <LinearLayout
+        android:id="@+id/toolsContainer"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#DDDDDD">
+
+        <Button
+            android:id="@+id/hideToolsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hide"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/penBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pen"/>
+
+        <Button
+            android:id="@+id/eraserBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eraser"/>
+
+        <Button
+            android:id="@+id/undoBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Undo"/>
+
+        <Button
+            android:id="@+id/redoBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Redo"/>
+
+        <Button
+            android:id="@+id/clearBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear"/>
+
+        <Button
+            android:id="@+id/colorPickerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Colors"/>
+
+        <Button
+            android:id="@+id/zoomInBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zoom +" />
+
+        <Button
+            android:id="@+id/zoomOutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zoom -" />
+
+
+
+        <SeekBar
+            android:id="@+id/brushSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="50"
+            android:progress="10"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Red"/>
+
+        <SeekBar
+            android:id="@+id/redSeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Green"/>
+
+        <SeekBar
+            android:id="@+id/greenSeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blue"/>
+
+        <SeekBar
+            android:id="@+id/blueSeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- DRAWING AREA -->
+
+    <com.example.mypaintapp.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/toolsContainer"
+        android:layout_above="@id/colorLayout"/>
+
+
+    <!-- BOTTOM COLOR BAR -->
+
+    <LinearLayout
+        android:id="@+id/colorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/toolsContainer"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/colorBlack"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#000000"/>
+
+        <View
+            android:id="@+id/colorRed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FF0000"/>
+
+        <View
+            android:id="@+id/colorGreen"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FF00"/>
+
+        <View
+            android:id="@+id/colorBlue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#0000FF"/>
+
+        <View
+            android:id="@+id/colorYellow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFF00"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
